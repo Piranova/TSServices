@@ -1,0 +1,259 @@
+@media only screen and (max-width: 425px){
+    .navbar-light .navbar-nav.except-navbar .nav-link{
+        color: #000;
+    }
+    .links ul li{
+        display: block;
+    }
+    .links ul li a.partner{
+        padding: 0em;
+    }
+    .dropdown-btn{
+        float: none;
+    }
+    .landing-text-2 h2{
+        font-size: 30px;
+    }
+    .landing-text-2 p{
+        font-size: 14px;
+        width: 100%;
+    }
+    #contactUs .contact-info .control h2{
+        font-size: 20px;
+    }
+    #contactUs .contact-info .control p{
+        font-size: 14px;
+    }
+    .data p{
+        line-height: 1;
+    }
+    #contactUs .contact-info .control h3 {
+        font-size: 14px;
+    }
+    .team-info{
+        margin-bottom: 40%;
+    }
+    .info{
+        flex-direction: column;
+        margin: 0;
+    }
+    .Cotacts-icons{
+        float: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5%;
+    }
+    #ContactUs .contactus-info h4{
+        font-size: 15px;
+    }
+    #ContactUs .contactus-info p{
+        font-size: 14px;
+    }
+    .personal-info h6{
+        font-size: 14px;
+    }
+    #ContactForm .message-info h4{
+        font-size: 15px;
+    }
+    #ContactForm .message-info p{
+        font-size: 14px;
+    }
+    #getStarted{
+        border-radius: 0% 0% 0% 0%; 
+        transform: rotate(0deg); 
+        margin-left: 0%; 
+        width: 100%;
+        min-height:2000px;
+        }    
+        .process-img{
+            height: 509px;
+            width: 310px;
+        }
+        .inside-getStarted{
+            top:15%;
+        }
+}
+@media only screen and (max-width: 768px){
+    .navbar-light .navbar-nav.except-navbar .nav-link{
+        color: #000;
+    }
+    .subscrib-form input[type=submit]{
+        width: 100px;
+    }
+    .links ul li{
+        padding-right: 0;
+    }
+    .links ul li a{
+        font-size: 14px;
+        margin: 0 0 0 2;
+    }
+    .links ul li a.partner{
+        padding-left: 0;
+    }
+    .team-info{
+        margin-bottom: 15%;
+    }
+    #AboutUs::before{
+        position: absolute;
+        left: 3%;
+    }
+    #AboutUs .aboutus-info p{
+        font-size: 14px;
+        text-align: justify;
+    }
+    #Attribution .attribution-info p{
+        font-size: 14px;
+        text-align: justify;
+    }
+    #AboutUs::before{
+        display: none;
+    }
+    #ContactUs::before{
+        display: none;
+    }
+    #ContactForm::before{
+        display: none;
+    }
+    .inside-1{
+        height: 70px;
+        width: 70px;
+    }
+    .inside-2{
+        height: 44px;
+        width: 44px;
+    }
+    .services-content h2{
+        font-size: 30px;
+    }
+    .services-content p{
+        font-size: 14px;
+    }
+    .first-shape{
+        width: 150px;
+        height: 170px;
+    }
+    .second-shape{
+        width: 150px;
+        height: 136px;
+    }
+    .third-shape{
+        width: 150px;
+        height: 163;
+    }
+    .fourth-shape{
+        width: 129px;
+        height: 157;
+    }
+    .start-role h2{
+        font-size: 30px;
+    }
+    .start-role p{
+        font-size: 14px;
+    }
+    #member .double-shape .one{
+        width: 266px;
+        height: 290px;
+    }
+    #member .double-shape .two{
+        width: 162px;
+        height: 193px;
+    }
+    .services-content button{
+        width: 250px;
+        height: 70px;
+    }
+    .move-title1 h2{
+        font-size: 30px;
+    }
+    .move-title1 p{
+        font-size: 14px;
+    }
+    .aside-shape{
+        width: 266px;
+        height: 290px;
+    }
+    .move-title2 h2{
+        font-size: 30px;
+    }
+    .first-shape,.second-shape,.third-shape,.fourth-shape p{
+        font-size: 12px;
+    }
+    #getStarted{
+        border-radius: 0% 0% 0% 0%; 
+        transform: rotate(0deg); 
+        margin-left: 0%; 
+        width: 100%;
+        min-height:2000px;
+        }    
+        .process-img{
+            height: 509px;
+            width: 310px;
+        }
+        .inside-getStarted{
+            top:15%;
+        }
+}
+@media only screen and (max-width:992px){
+    .navbar-light .navbar-nav.except-navbar .nav-link{
+        color: #000;
+    }
+    .home-banner h2{
+        font-size: 40px;
+    }
+    .home-banner p{
+        font-size: 14px;
+    }
+    .links ul li a.partner{
+        padding-left: 0;
+    }
+    #member .double-shape .one{
+        width: 296px;
+        height: 310px;
+    }
+    #member .double-shape .two{
+        width: 192px;
+        height: 227px;
+    }
+    .remove{
+        display: none;
+    }
+    .aside-shape{
+        display: none;
+    }
+    #getStarted{
+        border-radius: 0% 0% 0% 0%; 
+        transform: rotate(0deg); 
+        margin-left: 0%; 
+        width: 100%;
+        min-height:2000px;
+        }    
+        .process-img{
+            height: 509px;
+            width: 310px;
+        }
+        .inside-getStarted{
+            top:15%;
+        }
+   
+}
+
+@media only screen and (min-width:1200px){
+   
+    .home-banner p{
+        font-size: 14px;
+    }
+    .links ul li a.partner{
+        padding-left: 0;
+    }
+    #member .double-shape .one{
+        width: 296px;
+        height: 310px;
+    }
+    #member .double-shape .two{
+        width: 192px;
+        height: 227px;
+    }
+    
+	
+}

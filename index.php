@@ -1,0 +1,430 @@
+<?php 
+$errors = [];
+$errorMessage = '';
+$success = '';
+$successMessage = '';
+if(isset($_POST['submit'])){
+    if (!empty($_POST)) {
+        $email = $_POST['email']; 
+        $name = $_POST['name'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        if (empty($name)||empty($email)||empty($subject)||empty($message)) {
+            $errors[] = 'Please fill in all fields';
+        }
+       
+    if (empty($errors)) {
+    $formcontent ="
+        <html>
+            <body>
+                <table style='width:600px;'>
+                    <tbody>
+                        <tr>
+                            <td style='width:150px'><strong>Name: </strong></td>
+                            <td style='width:400px'>$name</td>
+                        </tr>
+                        <tr>
+                            <td style='width:150px'><strong>Email: </strong></td>
+                            <td style='width:400px'>$email</td>
+                        </tr>
+                        <tr>
+                            <td style='width:150px'><strong>Subject: </strong></td>
+                            <td style='width:400px'>$subject</td>
+                        </tr>
+                        <tr>
+                            <td style='width:150px'><strong>Message: </strong></td>
+                            <td style='width:400px'>$message</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </body>
+        </html>
+        ";
+        $to = "info@tsservices-agency.com";
+        $subject = "New enquiry from TS website";
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: <info@tsservices-agency.com>' . "\r\n"; 
+        $headers .= 'Cc: info@tsservices-agency.com' . "\r\n"; 
+        $headers .= 'Bcc: info@tsservicesagency@gmail.com' . "\r\n"; 
+
+            if(mail($to,$subject,$formcontent,$headers)){
+            $success = 'Thanks for getting in touch with us, we will get back to you on this at the earliest.';
+            $successMessage = "<p style='color: green;'>{$success }</p>";
+
+            }
+
+            else{
+            $errorMessage = 'Oops, something went wrong. Please try again later';
+
+            }
+        }
+        else {
+            $allErrors = join('<br/>', $errors);
+            $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+        }
+}
+}   
+?>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Home</title>
+</head>
+<body>
+    
+    <!-- start navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html"><img src="img/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav except-navbar ml-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="Services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="Tech.html">Technologies</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="Industries.html">Industries</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="OnlineOrderSystem.html">Online Order System</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="MerchantsPos.html">Merchant & pos</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="Digital markting.html">Digital Marketing</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="ResidualIncome.html">Residual income</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="AboutUs.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="ContactUs.html">contact us</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end navbar----------------------------------------------------------->
+    
+    <!-- start site-banner -->
+    <div id="site-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="home-banner">
+                        <h2>Total <br> Solution</h2>
+                        <p>TSService-Agency is recognized “Total Solution” Services Company serving our clients' all needs in Social Media Marketing, cost cutting with Profitability, Recruiting employee, credit card processing, POS, Web development, online ordering, Food & grocery delivery and Financial Support. TSservices-Agency, with our expertise and our partnerships with Business leaders can provide all of your Business needs. </p>
+                        <button onclick="window.location='ContactUs.html'" class="home-btn">Contact Us</button>
+                    </div>
+                </div>
+                <div class="col-md-9 remove">
+                    <video src="video/video.mp4" id="myVideo" controls class="home-shape"></video>
+                    <div class="video-overlay"></div>
+                    <div class="home-shape-overlay" >
+                        <button id="playButton" class="inside-1" type="button">
+                            <span class="fa fa-play fa-2x text-white"></span>
+                        </button>
+                    </div>
+                    <div class="home-icon">
+                        <div class="inside-2">
+                            <a href="#site-services"><i class="fa fa-long-arrow-down text-secondary"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end site-banner -->
+
+    <!-- start site services -->
+    <div id="site-services">
+        <div class="container">
+            <div class="services">
+                <h2>Services</h2>
+            </div>
+            <div class="row align-items-center justify-content-center mt-5">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <div onclick="window.location='Services.html'" class="first-shape d-flex justify-content-center align-items-center flex-column mx-auto">
+                                <img  src="img/code.png" height="40px" width="38px" alt="code" class="mb-2">
+                                <p>Website <br> Debelopment</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            
+                            <div onclick="window.location='Services.html'" class="second-shape d-flex justify-content-center align-items-center flex-column mx-auto">
+                                <img src="img/order-food.png" height="90px" width="80px" alt="ux-design" class="mb-2">
+                                <p>Online Food <br> ordering System</p> 
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            
+                            <div onclick="window.location='Services.html'" class="third-shape d-flex justify-content-center align-items-center flex-column mx-auto">
+                                <img   src="img/POS_new.png" height="80px" width="85px" alt="Software" class="mb-2">
+                                <p>Merchant & <br> POS services</p> 
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-3">
+                            <div onclick="window.location='Services.html'" class="fourth-shape d-flex justify-content-center align-items-center flex-column mx-auto">
+                                <img src="img/digital.png" height="65px" width="58px" alt="mobileApp" class="mb-2">
+                                <p>360 Digital <br> Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="services-content">
+                        <h2>We offer the best services</h2>
+                        <!--p>Aliquam vulputate, tortor nec commodo ultricies, vitae viverra urna nulla sed turpis. Nullam lacinia faucibus risus, a euismod lorem tincidunt id. Vestibulum imperdiet nibh vel magna lacinia ultrices. Nam ac elit a ante commodo tristique</p-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end site services -->
+
+    <!-- start get started -->
+    <div class="parent">
+    <div id="getStarted"></div>
+    <div class="inside-getStarted">
+        <div class="container">
+            <div class="row align-items-center justify-content-center py-3">
+                <div class="col-md-6">
+                    <div class="start-role">
+                        <h2>Everything you need to start growing your business!</h2>
+                        <!--p>Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate, tortor nec commodo ultricies, vitae viverra urna nulla sed turpis. Nullam lacinia faucibus risus</p-->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="process">
+                        <img src="img/process_new.png" height="709px" width="509px" alt="process" class="img-fluid process-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end get started -->
+
+    <!-- start team member -->
+    <!--div id="member">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="double-shape">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="services-content text-center">
+                        <h2>Lorem Ipsum lorem ipsum lorem</h2>
+                        <p>Aliquam vulputate, tortor nec commodo ultricies, vitae viverra urna nulla sed turpis. Nullam lacinia faucibus risus, a euismod lorem tincidunt id. Vestibulum imperdiet nibh vel magna lacinia ultrices. Nam ac elit a ante commodo tristique</p>
+                        <button>Lorem Ipsum</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div-->
+    <!-- end team member -->
+
+    <!-- start move section -->
+    <!--div id="move">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="move-title1">
+                        <h2>Lorem.Lorem.Lorem</h2>
+                        <p>Pellentesque vehicula fermentum turpis eu cursus. Cras convallis tellus et elit aliquet, vitae dignissim ligula sodales. </p>
+                    </div>
+                    <div class="move-title2">
+                        <h2>Lorem Ipsum Lorem</h2>
+                        <ul>
+                            <li><p>Cras convallis tellus et elit aliquet 20%</p></li>
+                            <li><p>Quisque commodo sem at velit sagittis elementum. Duis feugiat facilisis nisl id bibendum. Sed in ornare purus</p></li>
+                            <li><p>Aliquam augue ante, venenatis a nunc a, maximus rhoncus tellus. Nullam a tincidunt quam</p></li>
+                            <li><p>Morbi sodales risus quis orci hendrerit semper</p></li>
+                        </ul>
+                        <button>Lorem Ipsum</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="aside-shape"></div>
+        </div>
+    </div-->
+    <!-- end move section -->
+
+    <!-- start last section -->
+    <!--div id="last">
+        <div class="container">
+            <div class="last-content d-flex justify-content-center align-items-center">
+                <div class="last-title text-center">
+                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                    <button>Lorem Ipsum Lorem Ipsum</button>
+                </div>
+            </div>
+            <div class="image-title mt-5">
+                <p>Lorem Ipsum</p>
+            </div>
+            <div class="row justify-content-around">
+                <div class="details-info text-center">
+                    <div class="img-placeholder"></div>
+                    <h6>Lorem Ipsum</h6>
+                </div>
+                <div class="details-info text-center">
+                    <div class="img-placeholder"></div>
+                    <h6>Lorem Ipsum</h6>
+                </div>
+                <div class="details-info text-center">
+                    <div class="img-placeholder"></div>
+                    <h6>Lorem Ipsum</h6>
+                </div>
+                <div class="details-info text-center">
+                    <div class="img-placeholder"></div>
+                    <h6>Lorem Ipsum</h6>
+                </div>
+                <div class="details-info text-center">
+                    <div class="img-placeholder"></div>
+                    <h6>Lorem Ipsum</h6>
+                </div>
+                <div class="details-info text-center">
+                    <div class="img-placeholder"></div>
+                    <h6>Lorem Ipsum</h6>
+                </div>
+                <div class="details-info text-center">
+                    <div class="img-placeholder"></div>
+                    <h6>Lorem Ipsum</h6>
+                </div>
+            </div>
+        </div>
+    </div-->
+    <!-- end last section -->
+    <section id="ContactForm">
+        <div class="container">
+            <div class="row s-row">
+                <div class="message-info">
+                    <h6>SEND US A MESSAGE</h6>
+                    <h4>Get in touch with us</h4>
+                    <p>Send us a message and we will get back to you asap!</span></p>
+                    <?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
+                </div>
+                <form action="" method="POST" class="ContactUsForm">
+                    <div class="row">
+                      <div class="col-md-4 col-xs-12">
+                        <input type="text" class="form-control" placeholder="Enter your name" name="name">
+                      </div>
+                      <div class="col-md-4 col-xs-12">
+                        <input type="text" class="form-control" placeholder="Your Email" name="email">
+                      </div>
+                      <div class="col-md-4 col-xs-12">
+                        <input type="text" class="form-control" placeholder="Subject" name="subject">
+                      </div>
+                      <div class="col-md-12 col-xs-12">
+                        <input type="text" class="form-control message-field" placeholder="Your message here" name="message">
+                      </div>
+                    </div>
+                    <div class="form-group row submit-message">
+                        <div class="col-sm-10">
+                          <!-- <button type="submit">Send</button> -->
+                          <input name="submit" type="submit" value="Send" class="submit">
+                          <?php echo($successMessage) ?>
+
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- start scrollable adv -->
+    <section id="store-box" class="store-box">
+        <div class="store-overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="store">
+                            <p class="store-txt">
+                                Dollar Store is one of the world's larget stores. It is Amazing products. 60% of products are made in USA.
+                                Free delivery over $25 and more than 4000 products to choose from. Dollar store will keep on adding new and exciting products
+                                every week to our online shopping platform from over 30,000 items in Stock right here in USA. Dollar store is the one of the world's largest
+                                stores brand. Our Members can use Promo code: cheap5 to get 5% discount on shopping. <a href=" https://cheap.dollarstore.com/index.php/">Check it out here.</a>/
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end scrollabe adv -->
+    <!-- <hr> -->
+    <!-- start footer -->
+    <div id="ContactUs-footer">
+        <div class="container my-3">
+            <div class="row second-row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                            <a href = "Home.html" ><img src="img/logo.png" height="71px" width="55px" alt="logo" class="mr-3"></a>
+                            <p> &copy; 2020 - All Rights Reserved.</p>
+                        </div>
+                        
+                    </div>
+                    <div class="attribute" onclick="window.location='Attributions.html'">
+                        <p>Attributions</p>
+            </div>
+                </div>
+               
+                <div class="col-md-6">
+                    <div class="Cotacts-icons">
+                       <a href="https://www.facebook.com/Support4Bisinesses"><i class="fa fa-facebook"></i></a>
+                         <a href="https://www.instagram.com/wishmydate/"><i class="fa fa-instagram"></i></a>
+                         <a href="https://www.youtube.com/channel/UCfdQxV0ddY2PCinv22guAeg?view_as=subscriber"><i class="fa fa-play"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+    <script>
+        var vid = document.getElementById("myVideo"); 
+
+        function playVid() { 
+            $(".inside-1").css("display: none");
+            // $(".inside-sec").css("display: inline-block");
+            vid.play(); 
+        } 
+        function pauseVid() { 
+            vid.pause(); 
+        } 
+    </script>
+    <!-- start js source -->
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/function.js"></script>
+    <!-- end js source -->
+</body>
+</html>
